@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% ifequal count 4 %}
+        You may got covid! Please visit a <a href="/hospital/">Hospital</a>.
+    {% endifequal %}
+    
+    {% ifequal count 0 %}
+        Congratulation! You are safe  
+    {% endifequal %}
+    
+    {% ifnotequal count 0 %}
+        {% ifnotequal count 4 %}
+            You are sick please check one of the hospital <a href="/hospital/">here</a>.
+        {% endifnotequal %}
+    {% endifnotequal %}
+{% endblock %}
